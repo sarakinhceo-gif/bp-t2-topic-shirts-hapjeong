@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://topic.shirts-hapjeong.xyz/sitemap.xml
