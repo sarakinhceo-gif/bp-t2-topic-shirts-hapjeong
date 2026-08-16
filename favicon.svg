@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img">
+  <title>t2-topic-shirts-hapjeong</title>
+  <rect width="64" height="64" rx="14" fill="hsl(235 63% 25%)"/>
+  <path d="M64 0v26L38 0Z" fill="hsl(37 68% 60%)" opacity="0.16"/>
+  <g transform="rotate(0 32 32)"><path d="M12 44 26 24l10 12 6-8 8 16Z" fill="hsl(37 68% 60%)"/><path d="M12 44 26 24l10 12" fill="none" stroke="hsl(235 24% 96%)" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/></g>
+</svg>
