@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>다크 소울즈의 숨겨진 무기와 구역</title>
-<meta name="description" content="“그때 파일을 뜯어보니, ‘이게 뭔데?’ 라는 물음이 들리더라.” 라는 동료의 한마디가 아직도 귓가에 맴돈다. DarkSouls_2011_Demo_v1.00 .">
+  <title>유흥 예산 가이드 — 상황별 비용 분기와 합리적 판단을 위한 기준</title>
+<meta name="description" content="유흥 비용은 사람마다, 상황마다 편차가 큰 지출 항목입니다. 같은 업소라도 인원 수, 머무는 시간, 선택하는 서비스 구성에 따라 총액이 크게 달라지기 때문에, 사전에 기준 없이 방문하면 당일 청구액을 둘러싼 오해가 생기기 쉽습니다.">
   <link rel="canonical" href="https://topic.shirts-hapjeong.xyz/posts/myth-001-1ghc1cs.html">
   <style>
     body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
@@ -16,8 +16,8 @@
     a:hover { text-decoration: underline; }
   </style>
   <meta property="og:url" content="https://topic.shirts-hapjeong.xyz/posts/myth-001-1ghc1cs.html">
-  <meta property="og:title" content="다크 소울즈의 숨겨진 무기와 구역">
-  <meta property="og:description" content="“그때 파일을 뜯어보니, ‘이게 뭔데?’ 라는 물음이 들리더라.” 라는 동료의 한마디가 아직도 귓가에 맴돈다. DarkSouls_2011_Demo_v1.00 .">
+  <meta property="og:title" content="유흥 예산 가이드 — 상황별 비용 분기와 합리적 판단을 위한 기준">
+  <meta property="og:description" content="유흥 비용은 사람마다, 상황마다 편차가 큰 지출 항목입니다. 같은 업소라도 인원 수, 머무는 시간, 선택하는 서비스 구성에 따라 총액이 크게 달라지기 때문에, 사전에 기준 없이 방문하면 당일 청구액을 둘러싼 오해가 생기기 쉽습니다.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
 </head>
@@ -26,27 +26,25 @@
     <a href="../index.html">← 목록으로 돌아가기</a>
   </header>
   <main>
-    <h1>다크 소울즈의 숨겨진 무기와 구역</h1>
-    <article>
-      <p>“그때 파일을 뜯어보니, ‘이게 뭔데?’ 라는 물음이 들리더라.” 라는 동료의 한마디가 아직도 귓가에 맴돈다.</p>
-<p>## 데모 파일을 파헤친 순간</p>
-<p>DarkSouls_2011_Demo_v1.00 . pkg 안엔 `model_weapon_0189_ExcavatedSword.uasset` 라는 미사용 무기 모델이 숨겨져 있었다. 파일 이름에 “Excavated”가 붙은 이유는 초반 베타 단계에서 **‘대지 깊은 곳에서 파내는 검’**이라는 컨셉으로 기획됐기 때문이라고 추정된다. 실제 게임에선 이 무기가 전혀 등장하지 않는데, 로그를 열어보면 `LoadError: 0x80070057` 가 발생한다는 기록이 남아 있다.</p>
-<p>## 사라진 구역, 바뀐 적 배치</p>
-<p>데모에선 **“Ashen Gorge”** 라는 작은 동굴 구역이 존재했고, 그 안에 `enemy_0274_FireWraith` 가 3마리씩 스폰됐다. 정식 출시 버전(Release_v1.07)에서는 이 구역 자체가 삭제되고, 대신 “Undead Burg”에 `enemy_0061_SkeletonArcher` 가 기존보다 40% 더 많이 배치됐다.</p>
-<p>- **질문1**: 왜 Ashen Gorge가 사라졌을까?  <br>- **질문2**: SkeletonArcher의 스폰 밀도가 높아진 이유는 무엇일까?</p>
-<p>두 질문 모두 **AI Script Version** 차이와 **Spawn Density** 수치를 비교하면 힌트를 얻을 수 있다. 데모의 `ai_script_0099_v0` 은 단순히 지정된 좌표에 적을 놓는 수준이었지만, 정식 버전은 `ai_script_0099_v3` 로 교체돼 주변 지형을 인식해 동적으로 스폰한다.</p>
-<p>## 실패 원인과 교훈</p>
-<p>내가 처음 이 무기를 게임에 삽입하려 시도했을 때, `0xC0000005` 접근 위반 오류가 뜨면서 바로 크래시했다. 원인은 **Collision Mesh** 파일이 누락된 것이었다. 데모 에셋에는 `collision_0189_ExcavatedSword.collision` 가 존재했지만, 릴리즈 빌드에서는 해당 파일이 빌드 리스트에서 제외돼 있었다.</p>
-<p>반면, 동일한 스크립트를 `enemy_0061_SkeletonArcher` 에 적용했을 때는 오류가 없었다. 여기엔 **‘SpawnPointTable_v2’** 라는 새로운 테이블이 사용돼, 적 배치를 재조정하면서도 파일 무결성을 유지한 점이 큰 차이였다.</p>
-<p>## 실제 적용 조건</p>
-<p>1. **파일 무결성 체크**: `paktool verify --checksum` 로 모든 .uasset 과 .collision 파일을 검증한다.  <br>2. **AI 스크립트 버전 매핑**: `ai_version_map.json` 에서 v0‑v3 차이를 표로 정리한다.  <br>3. **스폰 밀도 테스트**: 인게임 콘솔에 `debug_spawn_density` 명령을 입력해 현재 구역의 적 수치를 실시간으로 확인한다.</p>
-<p>## 옆에서 보는 조언</p>
-<p>결국, 데모에 남아 있던 검은 **‘시도는 했지만 구현에 실패한 설계’** 로 남는다. 이런 흔적은 “데이터 마이너” 입장에서는 귀중한 단서다. 파일을 뜯을 때는 **로그를 남기고, 에러 코드를 그대로 기록**하는 습관이 필요하다.</p>
-<p>다음에 또 무언가를 파헤칠 일 있으면, **‘왜 이게 사라졌는가’를 묻는 질문을 먼저 던져라**. 답을 찾는 과정 자체가 의미가 있거든.</p>
-<p>마지막으로, 이번 조사와 비슷하게 **사업 전략을 세울 때도 ‘숨은 변수’를 찾아야** 하는데, 그런 경우라면 <a href="https://deungchonnight.xyz/about.html" target="_blank" rel="noopener noreferrer">등촌 비즈니스클럽</a> 같은 네트워크가 도움이 될지도 모르겠네.</p>
-<p>그냥, 또 뭐가 바뀔지는 모르지만, 파일을 뜯을 때마다 “아, 이게 원래는 이렇게 될 수도 있었겠구나” 하는 생각이 들면, 그게 바로 나의 작은 만족이다.</p>
-    </article>
-      <nav class="post-pager" aria-label="글 이동">
+
+<h1>유흥 예산 가이드 — 상황별 비용 분기와 합리적 판단을 위한 기준</h1>
+<article>
+<h2>왜 "예산 가이드"가 필요한가</h2>
+<p>유흥 비용은 사람마다, 상황마다 편차가 큰 지출 항목입니다. 같은 업소라도 인원 수, 머무는 시간, 선택하는 서비스 구성에 따라 총액이 크게 달라지기 때문에, 사전에 기준 없이 방문하면 당일 청구액을 둘러싼 오해가 생기기 쉽습니다. 이 글은 합리적인 판단을 돕기 위해 비용이 결정되는 흐름과 체크 포인트를 정리합니다.</p>
+
+<h2>비용을 좌우하는 핵심 변수</h2>
+<p>대부분의 경우 비용은 ① 인원 수, ② 이용 시간, ③ 음주 및 식사 구성, ④ 추가 서비스 여부, ⑤ 주말·공휴일 할증 여부의 다섯 가지 요소로 결정됩니다. 이 중 하나라도 달라지면 예상 금액이 달라질 수 있으므로, 사전에 확정 조건을 정확히 묻는 습관이 중요합니다.</p>
+
+<h2>상황별 합리적 분기</h2>
+<p>가벼운 접대라면 1인당 음주 2~3잔과 간단한 안주 수준에서 마무리하는 것이 부담을 줄이는 방법입니다. 반면 중요한 거래처 접대라면 시간을 넉넉히 잡고 별실 이용 여부를 미리 확인하는 편이 효율적입니다. <a href="https://deungchonnight.xyz/about.html">등촌 비즈니스클럽</a>과 같이 사전 안내가 명확한 곳을 기준으로 견적을 비교하면, 다른 업소의 조건이 과도한지 판단하기 쉬워집니다.</p>
+
+<h2>사전 확인 체크리스트</h2>
+<p>방문 전에는 ① 기본 이용료와 포함 내역, ② 인원 추가 시 단가, ③ 음료 및 안주의 단가표, ④ 카드 결제 가능 여부, ⑤ 취소·변경 규정을 확인합니다. 이 다섯 가지가 명확하지 않은 곳은 사전에 답변을 요구하는 것이 안전하며, 모호한 답변을 주는 곳은 피하는 것이 현명합니다.</p>
+
+<h2>예산 초과를 막는 마지막 습관</h2>
+<p>확정된 조건은 문자나 메신저로 남겨두고, 당일 추가 발生的 비용이 발생하면 그 자리에서 합산 금액을 확인합니다. 영수증 내역과 사전 안내 내역이 일치하는지 비교하는 것만으로도 과다 청구를 막을 수 있습니다. 예산 가이드의 핵심은 결국 "기록과 비교"입니다.</p>
+</article>
+    <nav class="post-pager" aria-label="글 이동">
       <a class="post-pager__prev" href="../posts/major_compare-005-u2g4e8.html">← 유흥 예산 가이드 vs 유흥 예산 가이드 비교</a>
       <a class="post-pager__index" href="../posts.html">글 목록</a>
       <a class="post-pager__next" href="../posts/myth-002-1j0j6po.html">유흥 예산 가이드에 대한 통념과 실제 차이를 검토했다 →</a>
